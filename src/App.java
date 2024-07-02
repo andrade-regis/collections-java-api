@@ -1,4 +1,5 @@
 import OperacoesBasicas.listaTarefa;
+import Ordenacao.OrdenacaoPessoas;
 
 
 
@@ -7,40 +8,46 @@ public class App {
         
         TestarTarefas();
         
+        OrdenarPessoas();
     }
 
     private static void TestarTarefas(){
 
-        // Criando uma instância da classe ListaTarefa
-    listaTarefa listaTarefa = new listaTarefa();
+        listaTarefa listaTarefa = new listaTarefa();
 
-    // Adicionando tarefas à lista
-    listaTarefa.adicionarTarefa("Comprar leite");
-    listaTarefa.adicionarTarefa("Estudar para o exame");
-    listaTarefa.adicionarTarefa("Fazer exercícios");
+        listaTarefa.adicionarTarefa("Comprar leite");
+        listaTarefa.adicionarTarefa("Estudar para o exame");
+        listaTarefa.adicionarTarefa("Fazer exercícios");
 
-    // Exibindo o número total de tarefas na lista
-    System.out.println("Você tem " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista:");
+        System.out.println("Você tem " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista:");
 
-    // Exibindo as descrições das tarefas na lista
-    listaTarefa.obterDescricoesTarefas();
+        listaTarefa.obterDescricoesTarefas();
 
-    // Removendo uma tarefa da lista
-    listaTarefa.removerTarefa("Trabalhar");
+        listaTarefa.removerTarefa("Trabalhar");
 
-    // Exibindo o número total de tarefas na lista após a remoção
-    System.out.println("Agora você tem " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista:");
+        System.out.println("Agora você tem " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista:");
 
-    // Exibindo as descrições das tarefas atualizadas na lista
-    listaTarefa.obterDescricoesTarefas();
+        listaTarefa.obterDescricoesTarefas();
 
-    // Removendo uma tarefa da lista quando a lista está vazia
-    listaTarefa.removerTarefa("Estudar para o exame");
+        listaTarefa.removerTarefa("Estudar para o exame");
 
-    // Exibindo o número total de tarefas na lista após tentar remover de uma lista vazia
-    System.out.println("Agora você tem " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista:");
-
-
+        System.out.println("Agora você tem " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista:");
     }
+
+    private static void OrdenarPessoas(){
+
+        OrdenacaoPessoas ordenacaoPessoas = new OrdenacaoPessoas();
+
+        ordenacaoPessoas.adicionarPessoa("Alice", 20, 1.56);
+        ordenacaoPessoas.adicionarPessoa("Bob", 30, 1.80);
+        ordenacaoPessoas.adicionarPessoa("Charlie", 25, 1.70);
+        ordenacaoPessoas.adicionarPessoa("David", 17, 1.56);
+        
+        System.out.println(ordenacaoPessoas.pessoaList);
+        System.out.println(ordenacaoPessoas.ordenarPorIdade());
+        System.out.println(ordenacaoPessoas.ordenarPorAltura());
+        
+    }
+    
 
 }
